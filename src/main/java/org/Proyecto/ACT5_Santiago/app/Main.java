@@ -14,7 +14,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         try {
             while (true) {
-                System.out.println("\n--- GACHAPON ---");
+                System.out.println("\n--- GACHAPON.. ---");
                 System.out.println("Monedas: " + jugador.getCoins());
                 System.out.println("1. Tirar (cuesta 1 moneda)");
                 System.out.println("2. Ver mis Pokémon");
@@ -47,8 +47,10 @@ public class Main {
                 }
             }
         }
-    }catch Exception InputMismatchException{
-        System.out.print("dato incorrecto : ");
-
+    }catch{
+    Exception InputMismatchException;  {
+            System.out.print("dato incorrecto, ingrese un numero valido ");
+        }
+        }
     }
 }
