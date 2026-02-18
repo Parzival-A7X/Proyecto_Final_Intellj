@@ -12,9 +12,7 @@ public class Main {
         Gachapon maquina = new Gachapon(pokedex);
         Jugador jugador = new Jugador(10); // 10 monedas iniciales
         Scanner scanner = new Scanner(System.in);
-        try {
             while (true) {
-                System.out.println("\n--- GACHAPON ->>>>>>>>--");
                 System.out.println("Monedas: " + jugador.getCoins());
                 System.out.println("1. Tirar (cuesta 1 moneda)");
                 System.out.println("2. Ver mis Pokémon");
