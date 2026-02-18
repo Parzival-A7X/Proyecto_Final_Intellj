@@ -1,6 +1,6 @@
-package org.Proyecto.ACT5_Santiago.Maquina;
-import org.Proyecto.ACT5_Santiago.pokemon.Pokedex;
-import org.Proyecto.ACT5_Santiago.pokemon.Pokemon;
+package org.Proyecto.Pokestation.Maquina;
+import org.Proyecto.Pokestation.pokemon.Pokedex;
+import org.Proyecto.Pokestation.pokemon.Pokemon;
 
 import java.util.List;
 import java.util.Random;

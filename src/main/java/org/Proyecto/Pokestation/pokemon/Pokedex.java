@@ -1,9 +1,9 @@
-package org.Proyecto.ACT5_Santiago.pokemon;
+package org.Proyecto.Pokestation.pokemon;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.Proyecto.ACT5_Santiago.pokemon.Rareza.*;
-import static org.Proyecto.ACT5_Santiago.pokemon.Tipo.*;
+import static org.Proyecto.Pokestation.pokemon.Rareza.*;
+import static org.Proyecto.Pokestation.pokemon.Tipo.*;
 
 public class Pokedex {
 

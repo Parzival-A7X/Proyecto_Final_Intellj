@@ -1,4 +1,4 @@
-package org.Proyecto.ACT5_Santiago.pokemon;
+package org.Proyecto.Pokestation.pokemon;
 
 public enum Rareza {
     COMUN,

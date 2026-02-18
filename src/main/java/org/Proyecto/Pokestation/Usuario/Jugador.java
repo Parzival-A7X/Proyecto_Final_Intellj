@@ -1,7 +1,7 @@
-package org.Proyecto.ACT5_Santiago.Usuario;
+package org.Proyecto.Pokestation.Usuario;
 import java.util.ArrayList;
 import java.util.List;
-import org.Proyecto.ACT5_Santiago.pokemon.Pokemon;
+import org.Proyecto.Pokestation.pokemon.Pokemon;
 
 
 public class Jugador {
