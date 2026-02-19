@@ -5,13 +5,17 @@ import org.Proyecto.ACT5_Santiago.pokemon.Pokemon;
 
 
 public class Jugador {
-
+    private String nombre;
     private int coins;
     private List<Pokemon> pokedex;
 
-    public Jugador(int coindIniciales){
-        this.coins = coindIniciales;
+    public Jugador(String nombre, int coinsIniciales){
+        this.nombre = nombre;
+        this.coins = coinsIniciales;
         this.pokedex = new ArrayList<>();
+    }
+    public String getNombre(){
+        return nombre;
     }
 
     public boolean puedeTirar() {
