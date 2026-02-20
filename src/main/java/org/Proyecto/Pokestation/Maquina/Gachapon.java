@@ -8,10 +8,11 @@ import java.util.Random;
 public class Gachapon {
 
     private Pokedex pokedex;
-    private Random random = new Random();
+    private Random random;
 
     public Gachapon(Pokedex pokedex){
         this.pokedex = pokedex;
+        this.random = new Random();
     }
 
     public Pokemon tirar () {
