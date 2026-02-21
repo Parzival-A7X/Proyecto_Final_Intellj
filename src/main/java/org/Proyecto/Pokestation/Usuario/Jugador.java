@@ -1,6 +1,8 @@
 package org.Proyecto.Pokestation.Usuario;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import org.Proyecto.Pokestation.pokemon.Pokemon;
 
 import static org.Proyecto.Pokestation.pokemon.Rareza.*;
@@ -46,6 +48,7 @@ public class Jugador {
             default -> coins += 0;
         }
     }
+
     public List<Pokemon> getPokedex() {
         return pokedex;
     }
