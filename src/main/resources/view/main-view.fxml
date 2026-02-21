@@ -9,7 +9,7 @@
     <Label fx:id="lblUsuario" text="Usuario: "/>
     <Label fx:id="lblMonedas" text="Monedas: "/>
     <Separator/>
-    <Button text="Tirar (cuesta 1 monedas)" onAction="#tirar"/>
+    <Button text="Tirar (cuesta 3 monedas)" onAction="#tirar"/>
     <Button text="Ver mis Pokémon" onAction="#verPokemon"/>
     <Button text="Liberar Pokémon" onAction="#liberarPokemon"/>
     <Button text="Cambiar de usuario" onAction="#cambiarUsuario"/>

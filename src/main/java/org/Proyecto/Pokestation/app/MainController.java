@@ -3,12 +3,14 @@ package org.Proyecto.Pokestation.app;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextInputDialog;
 import org.Proyecto.Pokestation.Maquina.Gachapon;
 import org.Proyecto.Pokestation.Usuario.Jugador;
 import org.Proyecto.Pokestation.pokemon.Pokedex;
 import org.Proyecto.Pokestation.pokemon.Pokemon;
 
 import java.util.HashMap;
+import java.util.Optional;
 
 public class MainController {
 
@@ -26,18 +28,35 @@ public class MainController {
 
     @FXML
     public void initialize() {
-        // Al iniciar, creamos o cargamos un usuario por defecto (podrías pedir nombre)
-        cambiarUsuario("Ash"); // Ejemplo
+        // Mostrar diálogo de inicio de sesión al arrancar
+        DialogoInicioSesion();
         actualizarPantalla();
     }
-    
+
+    private void DialogoInicioSesion() {
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle("Inicio de sesión");
+        dialog.setHeaderText("Bienvenido a Pokestation");
+        dialog.setContentText("Ingresa tu nombre de usuario:");
+
+        Optional<String> result = dialog.showAndWait();
+        if (result.isPresent() && !result.get().trim().isEmpty()) {
+            cambiarUsuario(result.get().trim());
+        } else {
+            // Si cancela o ingresa vacío, creamos un usuario por defecto
+            cambiarUsuario("Invitado");
+            txtArea.appendText("Has iniciado como Invitado. Puedes cambiar de usuario en cualquier momento.\n");
+        }
+    }
 
     private void cambiarUsuario(String nombre) {
         if (usuarios.containsKey(nombre)) {
             usuarioActual = usuarios.get(nombre);
+            txtArea.appendText("Bienvenido de nuevo, " + nombre + "\n");
         } else {
             usuarioActual = new Jugador(nombre, 10);
             usuarios.put(nombre, usuarioActual);
+            txtArea.appendText("Usuario creado. ¡Hola, " + nombre + "!\n");
         }
         actualizarLabels();
     }
@@ -49,7 +68,6 @@ public class MainController {
 
     private void actualizarPantalla() {
         actualizarLabels();
-        // Puedes limpiar el área de texto si quieres
     }
 
     @FXML
@@ -68,7 +86,7 @@ public class MainController {
 
     @FXML
     private void verPokemon() {
-        if (usuarioActual.getPokedex().isEmpty()) {  // Necesitas un getter en Jugador
+        if (usuarioActual.getPokedex().isEmpty()) {
             txtArea.appendText("No tienes Pokémon.\n");
         } else {
             txtArea.appendText("Tus Pokémon:\n");
@@ -82,8 +100,7 @@ public class MainController {
 
     @FXML
     private void liberarPokemon() {
-        // Aquí podrías mostrar una lista y pedir índice, o abrir un diálogo.
-        // Por simplicidad, asumimos que liberas el último (o puedes implementar un selector)
+        // Por simplicidad, libera el último
         if (!usuarioActual.getPokedex().isEmpty()) {
             Pokemon liberado = usuarioActual.getPokedex().remove(usuarioActual.getPokedex().size() - 1);
             txtArea.appendText("Has liberado a " + liberado.getNombre() + "\n");
@@ -94,10 +111,15 @@ public class MainController {
 
     @FXML
     private void cambiarUsuario() {
-        // Aquí podrías abrir un cuadro de diálogo para ingresar nombre.
-        // Por ahora, simulamos un cambio a "Misty"
-        cambiarUsuario("Misty");
-        txtArea.appendText("Usuario cambiado a " + usuarioActual.getNombre() + "\n");
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle("Cambiar usuario");
+        dialog.setHeaderText("Cambiar de usuario");
+        dialog.setContentText("Ingresa el nombre del usuario:");
+
+        Optional<String> result = dialog.showAndWait();
+        if (result.isPresent() && !result.get().trim().isEmpty()) {
+            cambiarUsuario(result.get().trim());
+        }
     }
 
     @FXML
