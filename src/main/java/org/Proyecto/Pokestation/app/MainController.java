@@ -98,16 +98,6 @@ public class MainController {
         }
     }
 
-    @FXML
-    private void liberarPokemon() {
-        // Por simplicidad, libera el último
-        if (!usuarioActual.getPokedex().isEmpty()) {
-            Pokemon liberado = usuarioActual.getPokedex().remove(usuarioActual.getPokedex().size() - 1);
-            txtArea.appendText("Has liberado a " + liberado.getNombre() + "\n");
-        } else {
-            txtArea.appendText("No tienes Pokémon para liberar.\n");
-        }
-    }
 
     @FXML
     private void cambiarUsuario() {
