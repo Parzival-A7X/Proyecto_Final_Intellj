@@ -44,7 +44,7 @@ public class Main {
                 System.out.println("---------------------------------");
                 System.out.println("Monedas: " + usuarioActual.getCoins());
                 System.out.println("---------------------------------");
-                System.out.println("1. Tirar (cuesta 3 monedas)");
+                System.out.println("1. Tirar (cuesta 1 monedas)");
                 System.out.println("---------------------------------");
                 System.out.println("2. Ver mis Pokémon");
                 System.out.println("---------------------------------");
