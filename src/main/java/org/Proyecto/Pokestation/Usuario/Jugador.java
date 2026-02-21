@@ -54,7 +54,8 @@ public class Jugador {
             System.out.println("Tus pokemones capturados: ");
             int i = 1;
             for (Pokemon p : pokedex) {
-                System.out.println(i + ". " + p.getNombre() + " |"+ p.getTipo()+ "| ("  + p.getRareza() + ") ");
+                System.out.println(i + ". " + p.getNombre() + " | " + p.getTipo() + " | (" + p.getRareza() + ")");
+                i++;
             }
         }
     }
