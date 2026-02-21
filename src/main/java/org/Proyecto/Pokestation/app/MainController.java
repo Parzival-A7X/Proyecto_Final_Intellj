@@ -1,5 +1,6 @@
 package org.Proyecto.Pokestation.app;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -43,9 +44,7 @@ public class MainController {
         if (result.isPresent() && !result.get().trim().isEmpty()) {
             cambiarUsuario(result.get().trim());
         } else {
-            // Si cancela o ingresa vacío, creamos un usuario por defecto
-            cambiarUsuario("Invitado");
-            txtArea.appendText("Has iniciado como Invitado. Puedes cambiar de usuario en cualquier momento.\n");
+            Platform.exit();
         }
     }
 
@@ -99,17 +98,6 @@ public class MainController {
     }
 
     @FXML
-    private void liberarPokemon() {
-        // Por simplicidad, libera el último
-        if (!usuarioActual.getPokedex().isEmpty()) {
-            Pokemon liberado = usuarioActual.getPokedex().remove(usuarioActual.getPokedex().size() - 1);
-            txtArea.appendText("Has liberado a " + liberado.getNombre() + "\n");
-        } else {
-            txtArea.appendText("No tienes Pokémon para liberar.\n");
-        }
-    }
-
-    @FXML
     private void cambiarUsuario() {
         TextInputDialog dialog = new TextInputDialog();
         dialog.setTitle("Cambiar usuario");
@@ -120,10 +108,11 @@ public class MainController {
         if (result.isPresent() && !result.get().trim().isEmpty()) {
             cambiarUsuario(result.get().trim());
         }
+        // Si cancela, no hacemos nada
     }
 
     @FXML
     private void salir() {
-        System.exit(0);
+        Platform.exit();
     }
 }
