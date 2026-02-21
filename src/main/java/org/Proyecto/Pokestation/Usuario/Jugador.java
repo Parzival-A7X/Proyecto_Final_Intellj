@@ -46,6 +46,9 @@ public class Jugador {
             default -> coins += 0;
         }
     }
+    public List<Pokemon> getPokedex() {
+        return pokedex;
+    }
 
     public void mostrarPokemon() {
         if (pokedex.isEmpty()) {
