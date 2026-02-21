@@ -38,15 +38,6 @@ public class MainController {
         dialog.setTitle("Inicio de sesión");
         dialog.setHeaderText("Bienvenido a Pokestation");
         dialog.setContentText("Ingresa tu nombre de usuario:");
-
-        Optional<String> result = dialog.showAndWait();
-        if (result.isPresent() && !result.get().trim().isEmpty()) {
-            cambiarUsuario(result.get().trim());
-        } else {
-            // Si cancela o ingresa vacío, creamos un usuario por defecto
-            cambiarUsuario("Invitado");
-            txtArea.appendText("Has iniciado como Invitado. Puedes cambiar de usuario en cualquier momento.\n");
-        }
     }
 
     private void cambiarUsuario(String nombre) {
