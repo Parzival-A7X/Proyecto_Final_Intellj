@@ -11,7 +11,6 @@
     <Separator/>
     <Button text="Tirar (cuesta 3 monedas)" onAction="#tirar"/>
     <Button text="Ver mis Pokémon" onAction="#verPokemon"/>
-    <Button text="Liberar Pokémon" onAction="#liberarPokemon"/>
     <Button text="Cambiar de usuario" onAction="#cambiarUsuario"/>
     <Button text="Salir" onAction="#salir"/>
     <Separator/>
