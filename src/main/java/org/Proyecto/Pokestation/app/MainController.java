@@ -29,15 +29,24 @@ public class MainController {
     @FXML
     public void initialize() {
         // Mostrar diálogo de inicio de sesión al arrancar
-        DialogoInicioSesion();
+        mostrarDialogoInicioSesion();
         actualizarPantalla();
     }
 
-    private void DialogoInicioSesion() {
+    private void mostrarDialogoInicioSesion() {
         TextInputDialog dialog = new TextInputDialog();
         dialog.setTitle("Inicio de sesión");
-        dialog.setHeaderText("Bienvenido a Pokestation");
+        dialog.setHeaderText("Bienvenido a Pokestation Gachapon");
         dialog.setContentText("Ingresa tu nombre de usuario:");
+
+        Optional<String> result = dialog.showAndWait();
+        if (result.isPresent() && !result.get().trim().isEmpty()) {
+            cambiarUsuario(result.get().trim());
+        } else {
+            // Si cancela o ingresa vacío, creamos un usuario por defecto
+            cambiarUsuario("Invitado");
+            txtArea.appendText("Has iniciado como Invitado. Puedes cambiar de usuario en cualquier momento.\n");
+        }
     }
 
     private void cambiarUsuario(String nombre) {
@@ -89,6 +98,16 @@ public class MainController {
         }
     }
 
+    @FXML
+    private void liberarPokemon() {
+        // Por simplicidad, libera el último
+        if (!usuarioActual.getPokedex().isEmpty()) {
+            Pokemon liberado = usuarioActual.getPokedex().remove(usuarioActual.getPokedex().size() - 1);
+            txtArea.appendText("Has liberado a " + liberado.getNombre() + "\n");
+        } else {
+            txtArea.appendText("No tienes Pokémon para liberar.\n");
+        }
+    }
 
     @FXML
     private void cambiarUsuario() {
