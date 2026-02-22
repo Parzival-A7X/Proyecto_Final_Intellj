@@ -1,4 +1,4 @@
-# Avances proyecto de maquina gachapon de Pokémon en dev
+# Avances proyecto de maquina gachapon de Pokémon en dev 🌱
 
 Aquí se muestra parte de las cosas que estan puestas ya en el avance por medio del branch dev que es tanto la base del CRUD como la ventana del fx aunque tambien hay un **`Main`** que hace las acciones actuales por medio de la terminal del IDE con todo y las `Excepciones` tanto de escribir letra en vez de numero y la de poner un numero fuera de la lista de acciones.
 
