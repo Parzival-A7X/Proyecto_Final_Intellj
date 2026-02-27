@@ -22,6 +22,8 @@ public class Pokemon {
     public Enum<Tipo> getTipo() {
         return tipo;
     }
-
+    @Override
+    public String toString(){
+        return nombre + "( "+ rareza + " - "+ tipo + ") ";
+    }
 }
-// Nigger
