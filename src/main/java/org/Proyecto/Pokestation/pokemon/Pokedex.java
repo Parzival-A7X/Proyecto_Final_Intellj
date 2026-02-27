@@ -51,8 +51,6 @@ public class Pokedex {
         comunes.add(new Pokemon("Nidoran♂", COMUN, VENENO));
         comunes.add(new Pokemon("Nidorino", COMUN, VENENO));
         comunes.add(new Pokemon("Nidoking", COMUN, VENENO));
-        comunes.add(new Pokemon("Clefairy", COMUN, HADA));
-        comunes.add(new Pokemon("Clefable", COMUN, HADA));
         comunes.add(new Pokemon("Vulpix", COMUN, FUEGO));
         comunes.add(new Pokemon("Ninetales", COMUN, FUEGO));
         comunes.add(new Pokemon("Jigglypuff", COMUN, NORMAL));

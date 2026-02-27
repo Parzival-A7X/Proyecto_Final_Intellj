@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/17.0.12"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="org.Proyecto.Pokestation.app.controller.MainController"
+           stylesheets="@/style.css">
+
+    <ImageView fitWidth="1280"
+               fitHeight="720"
+               preserveRatio="false"
+               pickOnBounds="true">
+        <image>
+            <Image url="@/background/wallpaper.jpeg"/>
+        </image>
+    </ImageView>
+
+    <VBox alignment="CENTER" spacing="20">
+
+        <Label text="PokeStation"
+               style="-fx-font-size:36px;
+                      -fx-font-weight:bold;
+                      -fx-text-fill:white;
+                      -fx-effect:dropshadow(gaussian, black, 4, 1, 0, 0);"/>
+
+        <HBox alignment="CENTER"
+              style="-fx-background-color:#2b2b2b;
+                     -fx-background-radius:10;
+                     -fx-padding:8 15;
+                     -fx-border-color:gold;
+                     -fx-border-radius:10;
+                     -fx-border-width:2;">
+
+            <Label fx:id="lblCoins"
+                   text="0"
+                   style="-fx-text-fill:gold;
+                          -fx-font-size:16px;
+                          -fx-font-weight:bold;"/>
+        </HBox>
+
+        <GridPane alignment="CENTER"
+                  hgap="20"
+                  vgap="25"
+                  prefWidth="800"
+                  prefHeight="249">
+
+            <columnConstraints>
+                <ColumnConstraints minWidth="80"/>
+                <ColumnConstraints percentWidth="40"/>
+                <ColumnConstraints minWidth="80"/>
+                <ColumnConstraints percentWidth="40"/>
+            </columnConstraints>
+
+            <rowConstraints>
+                <RowConstraints/>
+                <RowConstraints/>
+                <RowConstraints/>
+            </rowConstraints>
+
+            <ImageView fitHeight="80" fitWidth="80" preserveRatio="true"
+                       GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <image>
+                    <Image url="@/MenuIcon/pokeball.png"/>
+                </image>
+            </ImageView>
+
+            <Button fx:id="btnPokemon"
+                    text="POKEMON"
+                    prefHeight="70"
+                    maxWidth="Infinity"
+                    styleClass="menu-button"
+                    onAction="#onPokemon"
+                    GridPane.columnIndex="1"
+                    GridPane.rowIndex="0"/>
+
+            <ImageView fitHeight="80" fitWidth="80" preserveRatio="true"
+                       GridPane.columnIndex="2" GridPane.rowIndex="0">
+                <image>
+                    <Image url="@/MenuIcon/palo.png"/>
+                </image>
+            </ImageView>
+
+            <Button fx:id="btnPokedex"
+                    text="POKEDEX"
+                    prefHeight="70"
+                    maxWidth="Infinity"
+                    styleClass="menu-button"
+                    onAction="#onPokedex"
+                    GridPane.columnIndex="3"
+                    GridPane.rowIndex="0"/>
+
+            <ImageView fitHeight="80" fitWidth="80" preserveRatio="true"
+                       GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <image>
+                    <Image url="@/MenuIcon/comida.png"/>
+                </image>
+            </ImageView>
+
+            <Button fx:id="btnShop"
+                    text="LIBERAR"
+                    prefHeight="70"
+                    maxWidth="Infinity"
+                    styleClass="menu-button"
+                    onAction="#onShop"
+                    GridPane.columnIndex="1"
+                    GridPane.rowIndex="1"/>
+
+            <ImageView fitHeight="80" fitWidth="80" preserveRatio="true"
+                       GridPane.columnIndex="2" GridPane.rowIndex="1">
+                <image>
+                    <Image url="@/MenuIcon/hierba.png"/>
+                </image>
+            </ImageView>
+
+            <Button fx:id="btnUser"
+                    text="USER"
+                    prefHeight="70"
+                    maxWidth="Infinity"
+                    styleClass="menu-button"
+                    onAction="#onUser"
+                    GridPane.columnIndex="3"
+                    GridPane.rowIndex="1"/>
+
+            <ImageView fitHeight="80" fitWidth="80" preserveRatio="true"
+                       GridPane.columnIndex="0" GridPane.rowIndex="2">
+                <image>
+                    <Image url="@/MenuIcon/Disco.png"/>
+                </image>
+            </ImageView>
+
+            <Button fx:id="btnTrade"
+                    text="TRADE"
+                    prefHeight="70"
+                    maxWidth="Infinity"
+                    styleClass="menu-button"
+                    onAction="#onTrade"
+                    GridPane.columnIndex="1"
+                    GridPane.rowIndex="2"/>
+
+            <ImageView fitHeight="80" fitWidth="80" preserveRatio="true"
+                       GridPane.columnIndex="2" GridPane.rowIndex="2">
+                <image>
+                    <Image url="@/MenuIcon/Llave.png"/>
+                </image>
+            </ImageView>
+
+            <Button fx:id="btnExit"
+                    text="EXIT"
+                    prefHeight="70"
+                    maxWidth="Infinity"
+                    styleClass="menu-button"
+                    onAction="#onExit"
+                    GridPane.columnIndex="3"
+                    GridPane.rowIndex="2"/>
+
+        </GridPane>
+
+    </VBox>
+
+</StackPane>
