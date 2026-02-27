@@ -65,4 +65,11 @@ public class Jugador {
             }
         }
     }
+    public boolean liberarPokemon(Pokemon pokemon) {
+        if (pokedex.remove(pokemon)) {
+            monedasporRareza(pokemon);
+            return true;
+        }
+        return false;
+    }
 }
