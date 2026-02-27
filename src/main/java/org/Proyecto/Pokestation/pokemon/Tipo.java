@@ -15,8 +15,5 @@ public enum Tipo {
     ROCA,
     FANTASMA,
     DRAGON,
-    SINIESTRO,
-    ACERO,
-    HADA,
     NORMAL
 }

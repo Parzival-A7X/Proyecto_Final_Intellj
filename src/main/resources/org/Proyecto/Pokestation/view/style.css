@@ -1,0 +1,18 @@
+/* Botones */
+.menu-button {
+    -fx-background-color: #2D2D2D;
+    -fx-border-color: #2D2D2D;
+    -fx-border-width: 2px;
+    -fx-text-fill: white;
+    -fx-font-family: "Pokemon Pixel Font";
+    -fx-font-size: 28px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10 20 10 20;
+    -fx-cursor: hand;
+}
+
+.menu-button:hover {
+    -fx-background-color: #1E90FF;
+    -fx-border-color: #FFFFFF;
+}
+
